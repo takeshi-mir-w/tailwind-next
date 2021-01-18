@@ -1,13 +1,11 @@
-import Link from 'next/link';
-import Layout from '../components/Layout';
+import Link from 'next/link'
+import Layout from '../components/Layout'
 
 function IndexPage() {
   return (
     <Layout title='Home | Next.js + TypeScript Example'>
       <div className='max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8'>
-        <h1 className='text-3xl font-bold leading-tight text-gray-900'>
-          Hello Next.js 👋
-        </h1>
+        <h1>Hello Next.js 👋</h1>
       </div>
       <div className='max-w-7xl mx-auto py-6 sm:px-6 lg:px-8'>
         <p>
@@ -17,7 +15,7 @@ function IndexPage() {
         </p>
       </div>
     </Layout>
-  );
+  )
 }
 
-export default IndexPage;
+export default IndexPage

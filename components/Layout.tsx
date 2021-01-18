@@ -1,11 +1,11 @@
-import React, { ReactNode } from 'react';
-import Link from 'next/link';
-import Head from 'next/head';
+import React, { ReactNode } from 'react'
+import Link from 'next/link'
+import Head from 'next/head'
 
 type Props = {
-  children?: ReactNode;
-  title?: string;
-};
+  children?: ReactNode
+  title?: string
+}
 
 const Layout = ({ children, title = 'This is the default title' }: Props) => (
   <div>
@@ -21,7 +21,10 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
             <div className='hidden md:block'>
               <div className='ml-10 flex items-baseline space-x-4'>
                 <Link href='/'>
-                  <a href='#' className='header-item'>
+                  <a
+                    href='#'
+                    className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                  >
                     Home
                   </a>
                 </Link>
@@ -66,6 +69,6 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       </div>
     </footer>
   </div>
-);
+)
 
-export default Layout;
+export default Layout

@@ -1,20 +1,18 @@
-import { GetStaticProps } from 'next';
+import { GetStaticProps } from 'next'
 
-import { User } from '../../interfaces';
-import { sampleUserData } from '../../utils/sample-data';
-import Layout from '../../components/Layout';
-import List from '../../components/List';
+import { User } from '../../interfaces'
+import { sampleUserData } from '../../utils/sample-data'
+import Layout from '../../components/Layout'
+import List from '../../components/List'
 
 type Props = {
-  items: User[];
-};
+  items: User[]
+}
 
 const WithStaticProps = ({ items }: Props) => (
   <Layout title='Users List | Next.js + TypeScript Example'>
     <div className='max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8'>
-      <h1 className='text-3xl font-bold leading-tight text-gray-900'>
-        Users List
-      </h1>
+      <h1>Users List</h1>
     </div>
     <div className='max-w-7xl mx-auto py-6 sm:px-6 lg:px-8'>
       <p>
@@ -24,14 +22,14 @@ const WithStaticProps = ({ items }: Props) => (
       <List items={items} />
     </div>
   </Layout>
-);
+)
 
 export const getStaticProps: GetStaticProps = async () => {
   // Example for including static props in a Next.js function component page.
   // Don't forget to include the respective types for any props passed into
   // the component.
-  const items: User[] = sampleUserData;
-  return { props: { items } };
-};
+  const items: User[] = sampleUserData
+  return { props: { items } }
+}
 
-export default WithStaticProps;
+export default WithStaticProps
