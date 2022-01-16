@@ -11,7 +11,7 @@ jobs:
       - name: setup-node
         uses: actions/setup-node@v1
         with:
-          node-version: 15
+          node-version: 14.17.0
       - name: setup-yarn
         run: yarn install
       - name: lint
