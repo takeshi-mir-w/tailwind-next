@@ -7,7 +7,7 @@
     "start": "next start",
     "lint": "next lint --dir src",
     "test": "jest",
-    "test:coverage": "jest -- --coverage --silent --testLocationInResults --findRelatedTests --json --outputFile=\"report.json\"",
+    "test:coverage": "jest --coverage --silent --testLocationInResults --json --outputFile=\"report.json\"",
     "ts:check": "tsc -p . --noEmit"
   },
   "dependencies": {
