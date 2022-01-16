@@ -1,0 +1,29 @@
+name: "workflows"
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    name: Coverage report
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: setup
+          uses: actions/setup-node@v1
+          with:
+            node-version: 15
+          run: yarn install
+        - name: lint
+          run: npm run lint
+        - name: type-check
+          run: npm run ts:check
+        - name: test
+          run: npm run test
+        - name: Test coverage
+          uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            package-manager: 'yarn'
+            test-script: npm run test:coverage

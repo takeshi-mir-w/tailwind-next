@@ -7,7 +7,7 @@
     "start": "next start",
     "test": "jest",
     "test:coverage": "jest -- --coverage --silent --testLocationInResults --ci --findRelatedTests --json --outputFile=\"report.json\"",
-    "type-check": "tsc"
+    "ts:check": "tsc -p . --noEmit"
   },
   "dependencies": {
     "autoprefixer": "^10.2.1",
