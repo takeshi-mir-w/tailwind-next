@@ -15,14 +15,14 @@ jobs:
       - name: setup-yarn
         run: yarn install
       - name: lint
-        run: npm run lint
+        run: yarn lint
       - name: type-check
-        run: npm run ts:check
+        run: yarn ts:check
       - name: test
-        run: npm run test
+        run: yarn test
       - name: Test coverage
-        uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+        uses: artiomtr/jest-coverage-report-action@v2.0-rc.6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           package-manager: "yarn"
-          test-script: npm run test:coverage
+          test-script: yarn test:coverage
