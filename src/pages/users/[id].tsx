@@ -56,6 +56,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     // will receive `item` as a prop at build time
     return { props: { item } };
   } catch (err) {
-    return { props: { errors: err.message } };
+    if (err instanceof Error) {
+      return { props: { errors: err.message } };
+    } else {
+      return { props: { errors: "" } };
+    }
   }
 };

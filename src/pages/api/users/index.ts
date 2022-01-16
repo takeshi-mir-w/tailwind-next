@@ -9,7 +9,9 @@ const handler = (_req: NextApiRequest, res: NextApiResponse) => {
 
     res.status(200).json(sampleUserData);
   } catch (err) {
-    res.status(500).json({ statusCode: 500, message: err.message });
+    if (err instanceof Error) {
+      res.status(500).json({ statusCode: 500, message: err.message });
+    }
   }
 };
 
