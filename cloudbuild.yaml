@@ -6,4 +6,7 @@ steps:
     args: ["run", "lint"]
 
   - name: "gcr.io/cloud-builders/yarn"
+    args: ["run", "ts:check"]
+
+  - name: "gcr.io/cloud-builders/yarn"
     args: ["run", "test"]
